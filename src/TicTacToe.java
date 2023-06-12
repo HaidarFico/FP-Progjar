@@ -88,7 +88,9 @@ public class TicTacToe implements Runnable {
         painter.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
         if (!connect())
+        {
             initializeServer();
+        }
 
         frame = new JFrame();
         frame.setTitle("Tic-Tac-Toe");
@@ -162,7 +164,7 @@ public class TicTacToe implements Runnable {
         }
     }
 
-    private void checkForTie() {
+    public void checkForTie() {
         for (int i = 0; i < spaces.length; i++) {
             if (spaces[i] == null) {
                 return;
@@ -171,7 +173,7 @@ public class TicTacToe implements Runnable {
         tie = true;
     }
 
-    private void checkForWin() {
+    public void checkForWin() {
         for (int i = 0; i < wins.length; i++) {
             if (circle) {
                 if (spaces[wins[i][0]] == "O" && spaces[wins[i][1]] == "O" && spaces[wins[i][2]] == "O") {
@@ -222,6 +224,7 @@ public class TicTacToe implements Runnable {
         }
 
         if (accepted) {
+            System.out.println("Test");
             for (int i = 0; i < spaces.length; i++) {
                 if (spaces[i] != null) {
                     if (spaces[i].equals("X")) {
@@ -301,5 +304,200 @@ public class TicTacToe implements Runnable {
         }
         yourTurn = true;
         circle = false;
+    }
+    public String getIp() {
+        return ip;
+    }
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+    public int getPort() {
+        return port;
+    }
+    public void setPort(int port) {
+        this.port = port;
+    }
+    public Scanner getScanner() {
+        return scanner;
+    }
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+    public JFrame getFrame() {
+        return frame;
+    }
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
+    }
+    public int getWIDTH() {
+        return WIDTH;
+    }
+    public int getHEIGHT() {
+        return HEIGHT;
+    }
+    public Thread getThread() {
+        return thread;
+    }
+    public void setThread(Thread thread) {
+        this.thread = thread;
+    }
+    public Painter getPainter() {
+        return painter;
+    }
+    public void setPainter(Painter painter) {
+        this.painter = painter;
+    }
+    public Socket getSocket() {
+        return socket;
+    }
+    public void setSocket(Socket socket) {
+        this.socket = socket;
+    }
+    public DataOutputStream getDos() {
+        return dos;
+    }
+    public void setDos(DataOutputStream dos) {
+        this.dos = dos;
+    }
+    public DataInputStream getDis() {
+        return dis;
+    }
+    public void setDis(DataInputStream dis) {
+        this.dis = dis;
+    }
+    public ServerSocket getServerSocket() {
+        return serverSocket;
+    }
+    public void setServerSocket(ServerSocket serverSocket) {
+        this.serverSocket = serverSocket;
+    }
+    public BufferedImage getBoard() {
+        return board;
+    }
+    public void setBoard(BufferedImage board) {
+        this.board = board;
+    }
+    public BufferedImage getRedX() {
+        return redX;
+    }
+    public void setRedX(BufferedImage redX) {
+        this.redX = redX;
+    }
+    public BufferedImage getBlueX() {
+        return blueX;
+    }
+    public void setBlueX(BufferedImage blueX) {
+        this.blueX = blueX;
+    }
+    public BufferedImage getRedCircle() {
+        return redCircle;
+    }
+    public void setRedCircle(BufferedImage redCircle) {
+        this.redCircle = redCircle;
+    }
+    public BufferedImage getBlueCircle() {
+        return blueCircle;
+    }
+    public void setBlueCircle(BufferedImage blueCircle) {
+        this.blueCircle = blueCircle;
+    }
+    public String[] getSpaces() {
+        return spaces;
+    }
+    public void setSpaces(String[] spaces) {
+        this.spaces = spaces;
+    }
+    public boolean isWon() {
+        return won;
+    }
+    public void setWon(boolean won) {
+        this.won = won;
+    }
+    public boolean isTie() {
+        return tie;
+    }
+    public void setTie(boolean tie) {
+        this.tie = tie;
+    }
+    public boolean isYourTurn() {
+        return yourTurn;
+    }
+    public void setYourTurn(boolean yourTurn) {
+        this.yourTurn = yourTurn;
+    }
+    public boolean isCircle() {
+        return circle;
+    }
+    public void setCircle(boolean circle) {
+        this.circle = circle;
+    }
+    public boolean isAccepted() {
+        return accepted;
+    }
+    public void setAccepted(boolean accepted) {
+        this.accepted = accepted;
+    }
+    public boolean isUnableToCommunicateWithOpponent() {
+        return unableToCommunicateWithOpponent;
+    }
+    public void setUnableToCommunicateWithOpponent(boolean unableToCommunicateWithOpponent) {
+        this.unableToCommunicateWithOpponent = unableToCommunicateWithOpponent;
+    }
+    public boolean isEnemyWon() {
+        return enemyWon;
+    }
+    public void setEnemyWon(boolean enemyWon) {
+        this.enemyWon = enemyWon;
+    }
+    public int getErrors() {
+        return errors;
+    }
+    public void setErrors(int errors) {
+        this.errors = errors;
+    }
+    public int getLengthOfSpace() {
+        return lengthOfSpace;
+    }
+    public int getFirstSpot() {
+        return firstSpot;
+    }
+    public void setFirstSpot(int firstSpot) {
+        this.firstSpot = firstSpot;
+    }
+    public int getSecondSpot() {
+        return secondSpot;
+    }
+    public void setSecondSpot(int secondSpot) {
+        this.secondSpot = secondSpot;
+    }
+    public Font getFont() {
+        return font;
+    }
+    public Font getSmallerFont() {
+        return smallerFont;
+    }
+    public Font getLargerFont() {
+        return largerFont;
+    }
+    public String getWaitingString() {
+        return waitingString;
+    }
+    public String getUnableToCommunicateWithOpponentString() {
+        return unableToCommunicateWithOpponentString;
+    }
+    public String getWonString() {
+        return wonString;
+    }
+    public String getEnemyWonString() {
+        return enemyWonString;
+    }
+    public String getTieString() {
+        return tieString;
+    }
+    public int[][] getWins() {
+        return wins;
+    }
+    public void setWins(int[][] wins) {
+        this.wins = wins;
     }
 }
